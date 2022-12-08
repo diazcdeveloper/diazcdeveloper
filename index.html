@@ -1,35 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>diazcdeveloper</title>
-</head>
-<body id="body">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Diazcdeveloper</title>
+    </head>
+    <body id="body">
 
-    <nav>
-        <a href="#"><i class="fa-solid fa-code"></i></a>
-        <a href="#"><h1>Diazcdeveloper</h1></a>
-        <button class="btn_dark" id="btn_dark"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun hide"></i></button>
-    </nav>
+        <div class="container">
+            
+            <div class="slider">
+                <div class="img">
+                    <img src="./img/harold.png" alt="">
+                </div>
+            </div>
 
 
-    <section class="presentacion">
-        <div class="contenedor_imagen_harold"><img src="./images/harold.jpg" alt=""></div>
-        <div class="contenido_presentacion">
-            <h2><span>Front-end</span> Developer</h2>
-            <p><i class="fa-brands fa-codepen"></i>
-                Welcome to my <span>website</span>, here you can find part of my work and known a little about me. to start, my name is <span>Harold Diaz</span> and I am a web developer.
-            </p>
+            <section class="content">
+                <h2>Hi, i'm <span>front-end</span></h2>
+                <h3>developer</h3>
+                <p>With 1 year of experience creating web pages as a freelancer, With 1 year of experience creating web pages as a freelancer, check this page and learn a little more about my work.</p>
+                <div class="btn-box">
+                    <button class="btn">Contact me</button>
+                </div>
+            </section>
+
+            <div class="form hide">
+                <h2>Aquí estará el formulario</h2>
+                <button class="back">Back</button>
+            </div>
+
+
         </div>
-        <p class="creador">Creado en 2022 por @Diazcdeveloper</p>
-    </section>
 
-<script src="./index.js"></script>
-</body>
-</html>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"></path></svg>
+            <h3>Diazcdeveloper</h3>
+        </div>
+
+        <div class="menu" id="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="option" id="option">
+            <!-- <img src="./img/options.png" alt=""> -->
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M7.08 11.25A4.84 4.84 0 0 1 8 9.05L4.43 5.49A9.88 9.88 0 0 0 2 11.25zM9.05 8a4.84 4.84 0 0 1 2.2-.91V2a9.88 9.88 0 0 0-5.76 2.43zm3.7-6v5A4.84 4.84 0 0 1 15 8l3.56-3.56A9.88 9.88 0 0 0 12.75 2zM8 15a4.84 4.84 0 0 1-.91-2.2H2a9.88 9.88 0 0 0 2.39 5.76zm3.25 1.92a4.84 4.84 0 0 1-2.2-.92l-3.56 3.57A9.88 9.88 0 0 0 11.25 22zM16 9.05a4.84 4.84 0 0 1 .91 2.2h5a9.88 9.88 0 0 0-2.39-5.76zM15 16a4.84 4.84 0 0 1-2.2.91v5a9.88 9.88 0 0 0 5.76-2.39zm1.92-3.25A4.84 4.84 0 0 1 16 15l3.56 3.56A9.88 9.88 0 0 0 22 12.75z"></path></svg>
+        </div>
+
+        <div class="options">
+            <div class="colors hide">
+                <div class="color violet"></div>
+                <div class="color orange"></div>
+                <div class="color pink"></div>
+            </div>
+        </div>
+
+        <ul class="aside" id="aside">
+            <li><a href="https://github.com/diazcdeveloper?tab=repositories">Github</a></li>
+            <li><a href="#">Portafolio</a></li>
+        </ul>
+
+
+        <script src="./index.js"></script>
+    </body>
+    </html>

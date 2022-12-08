@@ -12,226 +12,363 @@ html, body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
-    background-color: var(--blanco);
 }
 
 :root{
-    --naranja: #E76235;
-    --black: #000000;
-    --gris: #333;
-    --gris-claro: #989797;
-    --blanco: #fff;
+    --primario: #8338ec;
+    --orange: #fb5607;
+    --pink: #ff006e;
 }
 
-.darkmode{
-    --blanco: #000000;
-    --black: #fff;
-    --gris: #fff;
-    transition: 0.5 all;
+body.violet{
+    --primario:var(--primario);
 }
 
-/* CSS NADVAR--------------------------------------------- */
+body.orange{
+    --primario:var(--orange);
+}
 
-nav{
-    margin-top: 30px;
+body.pink{
+    --primario:var(--pink);
+}
+
+
+/* menu hamburguesa---------------------------------- */
+
+.menu{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50px;
-}
-
-nav a{
-    text-decoration: none;
-}
-
-nav a i{
-    color: var(--naranja);
-    font-size: 3rem;
-    margin-right: 10px;
-    margin-left: 20px;
-}
-
-nav a h1{
-    font-size: 3rem;
-    letter-spacing: 5px;
-    color: var(--black);
-}
-
-.btn_dark{
-    border: none;
-    background-color: var(--blanco);
-    position: absolute;
-    right: 40px;
     cursor: pointer;
+    z-index: 2;
+    transition: all 1s;
 }
 
-.btn_dark .fa-solid{
-    font-size: 40px;
-    color: var(--black);
+.menu.close div:nth-of-type(1){
+    transform: rotate(45deg) translateY(7px);
 }
 
-.btn_dark .fa-solid.hide{
+.menu.close div:nth-of-type(2){
     display: none;
 }
 
-
-/* fin del nav */
-
-
-
-/* CSS SECTION ------------------------------------- */
-
-.presentacion{
-    display: flex;
-    height: calc(100vh - 80px);
+.menu.close div:nth-of-type(3){
+    transform: rotate(-45deg) translateY(-7px);
 }
 
-.contenedor_imagen_harold{
+.menu.close{
+    transform: translate(4px);
+}
+
+.menu div{
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all .5s;
+}
+
+.menu div:nth-of-type(2){
+    margin-top: 5px;
+}
+
+
+.menu div:nth-of-type(3){
+    margin-top: 5px;
+}
+
+
+
+.aside{
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    z-index: 1;
+    transition: all .5s;
+}
+
+.aside li{
+    font-size: 20px;
+    list-style: none;
+}
+
+.aside li{
+    margin-bottom: 20px;
+}
+
+.aside li a{
+    text-decoration: none;
+    color: black;
+}
+
+.aside.open{
+    left: 0;
+}
+
+
+
+/* -------------------------------------------- fin menu hamburguesa */
+
+/* logo-------------------------- */
+
+.logo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15px;
+    left: 15px;
+}
+
+.logo svg{
+    width: 40px;
+    height: 40px;
+    fill: var(--primario);
+    z-index: 2;
+}
+
+/* opciones de colores--------------------------------------------- */
+
+.options{
+    position: absolute;
+    display: flex;
+    height: 30px;
+    width: 120px;
+    bottom: 70px;
+    right: 0px;
+    transition: all .3s;
+}
+
+.options.show{
+    right: 20px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow:  7px 7px 22px #c7c7c7,
+                 -7px -7px 22px #f9f9f9;
+}
+
+.options .colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.options .colors .color{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.colors .violet{
+    background-color: #8338ec;
+    cursor: pointer;
+}
+
+.colors .orange{
+    background-color: var(--orange);
+    cursor: pointer;
+}
+
+.colors .pink{
+    background-color: var(--pink);
+    cursor: pointer;
+}
+
+.colors.hide{
+    display: none;
+}
+
+.option{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.option .svg{
+    width: 100%;
+    height: 100%;
+    fill: var(--primario);
+}
+
+
+
+/* version escritorio------------------------------------------ */
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container .slider{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
+    position: relative;
 }
 
-.contenedor_imagen_harold img{
-    height: 450px;
-    border-radius: 50%;
+
+.container .slider .img{
+    background-color: var(--primario);
+    border-radius: 78% 22% 23% 77% / 53% 7% 93% 47% ;
 }
 
-.contenido_presentacion{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+.container .slider .img img{
+    width: 370px;
+    border-radius: 45% 55% 23% 77% / 66% 27% 93% 34% ;
+    transform: rotate(25deg) translateY(20px) translateX(30px);
+}
+
+.container .content{
     width: 50%;
+    height: 50%;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.contenido_presentacion h2{
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--gris);
-    letter-spacing: 2px;
+.container .content h2{
+    font-size: 40px;
 }
 
-.contenido_presentacion h2 span{
-    margin-left: 12px;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    color: var(--naranja);
+.container .content h2 span{
+    color: var(--primario);
 }
 
-.contenido_presentacion p{
-    text-align: justify;
-    font-size: 20px;
-    width: 500px;
-    color: var(--gris);
-}
-
-.contenido_presentacion p i{
+.container h3{
+    letter-spacing: 22px;
+    margin-top: -18px;
     font-size: 25px;
-    margin-right: 10px;
-    color: var(--black);
+    font-weight: 900;
+    margin-bottom: 20px;
+    padding-left: 12px;
 }
 
-.contenido_presentacion p span{
-    font-weight: 700;
-    color: var(--black);
+.container .content p{
+    width: 500px;
+    text-align: justify;
+    color: #6c6b6e;
 }
 
-.creador{
-    position: absolute;
-    color: var(--gris-claro);
-    bottom: 20px;
-    right: 30px;
+.btn-box{
+    width: 100%;
+    display: flex;
 }
 
+.btn{
+    background-color: var(--primario);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
 
-/* CSS RESPONSIVE---------------------------------- PANTALLA MEDIANA */
+@media only screen and (max-width: 900px) {
 
-@media screen and (max-width: 1000px){
-
-    .proyectos{
-        left: 50px;
-    }
-
-    .presentacion{
+    .container{
         flex-direction: column;
     }
 
-    .contenedor_imagen_harold{
-        margin-top: 80px;
-        width: 100%;
-    }
-
-    .contenido_presentacion{
-        margin-top: 30px;
+    .container .slider{
+        display: flex;
+        justify-content: center;
         align-items: center;
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 850px){
-    .proyectos{
-        display: none;
-    }
-}
-
-/* CSS RESPONSIVE---------------------------------- MOVIL */
-
-@media screen and (max-width: 650px){
-
-    nav{
-        justify-content: space-evenly;
+        height: 50%;
     }
 
-    .proyectos{
-        display: none;
+    .container .slider .img img{
+        width: 270px;
+        transition: all .3s;
     }
 
-    nav a h1{
-        font-size: 25px;
-        letter-spacing: 2px;
+
+    .container .content{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
     }
 
-    .btn_dark{
-        border: none;
-        background-color: var(--blanco);
-        padding-left: 10px;
-        position: static;
-    }
-    
-    .btn_dark .fa-solid{
+    .container .content h2{
         font-size: 30px;
-        color: var(--black);
     }
 
-    .contenedor_imagen_harold{
-        margin-top: 60px;
-    }
-
-    .contenedor_imagen_harold img{
-        height: 350px;
-        border-radius: 50%;
-    }
-
-
-    .contenido_presentacion{
-        margin: 20px;
-        width: 90%;
-    }
-
-    .contenido_presentacion h2{
-        margin-bottom: 5px;
-        color: var(--gris);
-        text-align: center;
+    .container h3{
+        letter-spacing: 17px;
         font-size: 20px;
     }
 
-    .contenido_presentacion p{
-        width: auto;
+    .container .content p{
+        width: 100%;
+    }
+
+    .btn-box{
+        width: 100%;
+        display: flex;
+    }
+
+    .btn{
         padding: 10px;
     }
 
-    .contenido_presentacion h2 span{
-        font-size: 40px;
+
+    /* mostrar formulario de contacto--------------------- */
+
+    .container .slider .img.form-on img{
+        width: 170px;
+        height: 30%;
+        transition: all .3s;
     }
+
+    .container .content.form-on{
+        display: none;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 70%;
+    }
+
+    .form .back{
+        border: none;
+        border-radius: 5px;
+        padding: 3px 10px;
+        color: white;
+        background-color: var(--primario);
+    }
+
+
+    .form.hide{
+        display: none;
+    }
+
 }
