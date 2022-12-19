@@ -291,6 +291,7 @@ body.pink{
 /* formulario----------------------------------------------------- */
 
 .form{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -301,6 +302,13 @@ body.pink{
 
 .form.hide{
     display: none;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
 }
 
 .container .slider .img.form-on img{
@@ -320,6 +328,9 @@ body.pink{
 }
 
 .form .back{
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
     border: none;
     border-radius: 5px;
     padding: 3px 10px;
@@ -394,6 +405,7 @@ body.pink{
     }
     
     .form{
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -401,8 +413,15 @@ body.pink{
         width: 100%;
         height: 70%;
     }
+
+    .form form{
+        width: 300px;
+    }
     
     .form .back{
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
         border: none;
         border-radius: 5px;
         padding: 3px 10px;
